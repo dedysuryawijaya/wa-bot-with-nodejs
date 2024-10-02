@@ -1,11 +1,14 @@
-const PORT = process.env.PORT;
-const API_KEY_GEMINI = process.env.API_KEY_GEMINI;
+import 'dotenv/config'
+
+const APP_URL = process.env.APP_URL
+const PORT = process.env.PORT
+const API_KEY_GEMINI = process.env.API_KEY_GEMINI
 
 const MONGODB_ENABLED = !!(
     process.env.MONGODB_ENABLED && process.env.MONGODB_ENABLED === 'true'
 )
 
-const MONGODB_URL = process.env.MONGODB_URL || 'mongodb://127.0.0.1:27017/whatsapp-bot'
+const MONGODB_URL = process.env.MONGODB_URL
 
 export default {
     mongoose: {
@@ -17,6 +20,7 @@ export default {
             // useUnifiedTopology: true
         }
     },
+    app_url: APP_URL,
     port: PORT,
     apiKeyGemini: API_KEY_GEMINI,
 }

@@ -2,10 +2,8 @@ import { web } from "./application/web.js";
 import { logger } from "./application/logging.js";
 import mongoose from "mongoose";
 import { connectToCluster } from "./application/mongoConnection.js";
-import 'dotenv/config'
+import 'dotenv/config';
 import config from './application/config.js';
-
-logger.info(config);
 
 if (config.mongoose.enable) {
     mongoose.set('strictQuery', true);
@@ -14,9 +12,7 @@ if (config.mongoose.enable) {
     })
 }
 
-logger.info(config)
-
-web.listen(3000, async () => {
-    logger.info("App start in port : " + 3000);
+web.listen(config.port, async () => {
+    logger.info("App start in port : " + config.port);
     global.mongoClient = await connectToCluster(config.mongoose.url)
 })

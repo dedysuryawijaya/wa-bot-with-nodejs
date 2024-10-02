@@ -13,12 +13,13 @@ class WhatsAppInstance {
     key = ''
     authState
     instance = {
+        key: this.key,
         qr: '',
         qrRetry: 0
     }
 
-    constructor(){
-        this.key = "dedy"
+    constructor(key){
+        this.key = key
     }
 
     async connect() {

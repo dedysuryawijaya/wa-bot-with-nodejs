@@ -3,7 +3,7 @@ import { WhatsAppInstance } from "../service/instanceService.js";
 
 const text = async (req, res, next) => {
     try {
-        const data = await WhatsAppInstance['dedy'].sendTextMessage(
+        const data = await WhatsAppInstance[req.body.key].sendTextMessage(
             req.body.id,
             req.body.message
         )
@@ -18,7 +18,7 @@ const text = async (req, res, next) => {
 
 const image = async (req, res, next) => {
     try {
-        const data = await WhatsAppInstance['dedy'].sendMediaFile(
+        const data = await WhatsAppInstance[req.body.key].sendMediaFile(
             req.body.id,
             req.file,
             'image',

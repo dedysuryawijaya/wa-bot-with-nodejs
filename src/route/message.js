@@ -3,7 +3,8 @@ import messageController from "../controller/messageController.js";
 
 const message = express.Router();
 
-message.post('/sendMessage', messageController.text)
+message.post('/text', messageController.text)
+message.post('/image', messageController.image)
 
 export {
     message

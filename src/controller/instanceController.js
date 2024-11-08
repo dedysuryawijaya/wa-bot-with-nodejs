@@ -28,7 +28,6 @@ const init = async (req, res, next) => {
 const qrbase64 = async (req, res, next) => {
     try {
         const qrcode = await WhatsAppInstance[req.body.key].instance.qr;
-        logger.info(qrcode)
         res.status(200).json({
             success: true,
             message: 'QR Base64 fetched successfully',

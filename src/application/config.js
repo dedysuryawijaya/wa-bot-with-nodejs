@@ -10,6 +10,8 @@ const MONGODB_ENABLED = !!(
 
 const MONGODB_URL = process.env.MONGODB_URL
 
+const API_KEY = process.env.API_KEY;
+
 export default {
     mongoose: {
         enable: MONGODB_ENABLED,
@@ -22,5 +24,6 @@ export default {
     },
     app_url: APP_URL,
     port: PORT,
+    api_key: API_KEY,
     apiKeyGemini: API_KEY_GEMINI,
 }
